@@ -12,6 +12,10 @@ const server = app.listen(PORT, () => {
 });
 server.on("error", (error) => console.log(`Error en servidor ${error}`));
 
+app.get("/", (req, res) => {
+  res.send("Ingresa a /productos o /productoRandom");
+});
+
 app.get("/productos", async (req, res) => {
   const arrayProductos = await file1.getAll();
 
